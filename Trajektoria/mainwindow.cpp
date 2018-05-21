@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     G=9.8;                          //Stałe
     Ro=1.2255;
-    Skok=.001;
+    Skok=.01;
 
 
     S[0]=G;                         //Wpisanie stałych do tablicy

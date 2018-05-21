@@ -73,13 +73,23 @@ void rysujTrajektorie(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
 
     if(proporcje(maxX+minX,maxY,size_x,size_y))
     {
-        while(p!=0)
+        while(p->n!=0)
         {
-            int x=a+int((p->x+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
-            int y=int(size_y-a-p->y/(maxX+minX)*(size_x-2*a));
+            double x1=a+int((p->x+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
+            double y1=int(size_y-a-p->y/(maxX+minX)*(size_x-2*a));
+            double x2=a+int(((p->n->x)+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
+            double y2=int(size_y-a-(p->n->y)/(maxX+minX)*(size_x-2*a));
 
-            obraz.setPixel(x,y, kolor_krzywej);
-            obraz.setPixel(x,y+1, kolor_krzywej);                       //pogrubienie lini
+
+            QPainter traj;
+            traj.begin(&obraz);
+            traj.setPen(kolor_krzywej);
+            traj.drawLine(x1,y1,x2,y2);
+            traj.end();
+
+//            obraz.setPixel(x,y,kolor_krzywej);
+
+//            obraz.setPixel(x,y+1, kolor_krzywej);                  //pogrubienie lini
             p=p->n;
         }
     }
@@ -92,7 +102,7 @@ void rysujTrajektorie(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
             int y=int((size_y-2*a)*(1-(p->y)/(maxY)))+a;
 
             obraz.setPixel(x,y, kolor_krzywej);
-            obraz.setPixel(x+1,y, kolor_krzywej);                       //pogrubienie lini
+            //obraz.setPixel(x+1,y, kolor_krzywej);                       //pogrubienie lini
             p=p->n;
         }
     }
