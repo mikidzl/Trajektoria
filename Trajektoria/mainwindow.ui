@@ -39,7 +39,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ikona2.png</normaloff>ikona2.png</iconset>
+    <normaloff>ikona.png</normaloff>ikona.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -536,7 +536,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Statystyki</string>
+     <string>Analiza</string>
     </property>
    </widget>
   </widget>

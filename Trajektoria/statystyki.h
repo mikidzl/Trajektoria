@@ -2,6 +2,7 @@
 #define STATYSTYKI_H
 
 #include <QDialog>
+#include <QPainter>
 #include <cmath>
 
 #include "analiza.h"
@@ -20,10 +21,18 @@ public:
     ~statystyki();
 
 public slots:
-    void aktualizuj_staty(Punkt *p);
+     void przyjmij_liste(Punkt *p);
     
+private slots:
+    void on_pB_wykres_clicked();
+    QPixmap rysuj_wykres(Punkt *p, int size_x, int size_y);
+    void aktualizuj_staty(Punkt *p);
+    void pokaz_wykres(Punkt *p);
+
 private:
     Ui::statystyki *ui;
+    Punkt *p;
+    double t;
 };
 
 #endif // STATYSTYKI_H

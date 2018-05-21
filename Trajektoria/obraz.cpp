@@ -125,7 +125,7 @@ bool proporcje(double x, double y, int size_x, int size_y)
 void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
 {
     int b = 5;          //odleglosc od krawedzi
-    int c = 5;          //szerkosc grota
+    int c = 3;          //szerkosc grota
     int d = 10;         //dlugosc grota
     int x0=a;
     double k=1;            //podzialka
@@ -169,7 +169,7 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
         }
 
 
-        static const QPointF grotX[3] = {
+        QPointF grotX[3] = {
             QPointF(size_x-b,size_y-a),
             QPointF(size_x-b-d,size_y-a+c),
             QPointF(size_x-b-d,size_y-a-c)
@@ -212,7 +212,6 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
         osY.begin(&obraz);
         osY.setPen(Qt::black);
         osY.setBrush(Qt::black);
-        osY.drawPolygon(grotY,3);
         osY.drawLine(x0,size_y-b,x0,b);
         for(double i = size_y-a; i>20; i=i-skala*k)
         {
@@ -235,6 +234,8 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
             }
         }
         osY.drawText(x0-15,15,"y");
+        osY.setRenderHint(QPainter::Antialiasing);
+        osY.drawPolygon(grotY,3);
         osY.end();
     }
 

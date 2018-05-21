@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ikona2.png</normaloff>ikona2.png</iconset>
+    <normaloff>ikona.png</normaloff>ikona.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -45,7 +45,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>ikona2.png</pixmap>
+    <pixmap>ikona.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>

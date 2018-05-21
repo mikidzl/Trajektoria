@@ -39,7 +39,7 @@ public:
         pokaz_traj->setMinimumSize(QSize(680, 510));
         pokaz_traj->setMaximumSize(QSize(700, 510));
         QIcon icon;
-        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("ikona.png"), QSize(), QIcon::Normal, QIcon::Off);
         pokaz_traj->setWindowIcon(icon);
         layoutWidget = new QWidget(pokaz_traj);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));

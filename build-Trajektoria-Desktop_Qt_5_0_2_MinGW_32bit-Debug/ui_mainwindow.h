@@ -91,7 +91,7 @@ public:
         MainWindow->setFocusPolicy(Qt::WheelFocus);
         MainWindow->setContextMenuPolicy(Qt::NoContextMenu);
         QIcon icon;
-        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("ikona.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         MainWindow->setWindowOpacity(1);
         MainWindow->setAutoFillBackground(false);
@@ -383,7 +383,7 @@ public:
         pb_pokaz->setText(QApplication::translate("MainWindow", "Poka\305\274", 0));
         pB_start->setText(QApplication::translate("MainWindow", "OBLICZ", 0));
         pB_zapisz->setText(QApplication::translate("MainWindow", "Zapisz", 0));
-        pB_statystyki->setText(QApplication::translate("MainWindow", "Statystyki", 0));
+        pB_statystyki->setText(QApplication::translate("MainWindow", "Analiza", 0));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", 0));
         menuPomoc->setTitle(QApplication::translate("MainWindow", "Pomoc", 0));
     } // retranslateUi

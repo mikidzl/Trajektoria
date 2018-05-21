@@ -56,3 +56,16 @@ double x_kon(Punkt *p)
         p=p->n;
     return p->x;
 }
+
+
+double czas(Punkt *p)
+{
+    int i=0;
+
+    while(p!=0)
+    {
+        i++;
+        p=p->n;
+    }
+    return i*0.01;
+}

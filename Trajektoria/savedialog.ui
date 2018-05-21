@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ikona2.png</normaloff>ikona2.png</iconset>
+    <normaloff>ikona.png</normaloff>ikona.png</iconset>
   </property>
   <property name="statusTip">
    <string extracomment="co to"/>

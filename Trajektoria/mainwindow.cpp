@@ -161,7 +161,7 @@ void MainWindow::on_pb_pokaz_clicked()
 void MainWindow::on_actionInstrukcja_triggered()
 {
     QLabel *imageLabel = new QLabel;
-    QImage image("Instrukcja_beta3.png");
+    QImage image("Instrukcja_beta.png");
     imageLabel->setPixmap(QPixmap::fromImage(image));
 
     instrukcja = new QScrollArea;
@@ -171,7 +171,7 @@ void MainWindow::on_actionInstrukcja_triggered()
     instrukcja->resize(923,900);
     instrukcja->setMinimumSize(923,600);
     instrukcja->setWindowTitle("Instrukcja");
-    instrukcja->setWindowIcon(QIcon("ikona2.png"));
+    instrukcja->setWindowIcon(QIcon("ikona.png"));
     instrukcja->show();
 }
 
