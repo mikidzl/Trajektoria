@@ -12,7 +12,8 @@ QPixmap tworzObraz(Punkt *p, int size_x, int size_y)
     obraz.fill(kolor_tla);
 
     rysujSiatka(obraz,p,size_x,size_y,a);
-    trawka(obraz,a,size_x,size_y);
+
+    //trawka(obraz,a,size_x,size_y);
     slonko(obraz);
 
 
@@ -27,7 +28,7 @@ QPixmap tworzObraz(Punkt *p, int size_x, int size_y)
 
 
     obraz.setText("Description","Dziala");
-    obraz.save("image.bmp",0,100);
+    obraz.save("image.bmp","BMP",-1);
 
 
     return QPixmap::fromImage(obraz);
@@ -54,6 +55,7 @@ void slonko(QImage &obraz)
 
     QPainter paint;
     paint.begin(&obraz);
+    paint.setRenderHint(QPainter::Antialiasing);
     paint.setPen(Qt::black);
     paint.setBrush(Qt::yellow);
     paint.drawPie(rectangle, startAngle, spanAngle);
@@ -75,20 +77,20 @@ void rysujTrajektorie(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
     {
         while(p->n!=0)
         {
-            double x1=a+int((p->x+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
-            double y1=int(size_y-a-p->y/(maxX+minX)*(size_x-2*a));
-            double x2=a+int(((p->n->x)+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
-            double y2=int(size_y-a-(p->n->y)/(maxX+minX)*(size_x-2*a));
+            double x1=a+double((p->x+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
+            double y1=double(size_y-a-p->y/(maxX+minX)*(size_x-2*a));
+            double x2=a+double(((p->n->x)+minX)/(maxX+minX)*(size_x-2*a));          //rasteryzacja i przeskalowanie
+            double y2=double(size_y-a-(p->n->y)/(maxX+minX)*(size_x-2*a));
 
 
             QPainter traj;
             traj.begin(&obraz);
+            traj.setRenderHint(QPainter::Antialiasing);
             traj.setPen(kolor_krzywej);
             traj.drawLine(x1,y1,x2,y2);
             traj.end();
 
 //            obraz.setPixel(x,y,kolor_krzywej);
-
 //            obraz.setPixel(x,y+1, kolor_krzywej);                  //pogrubienie lini
             p=p->n;
         }
@@ -177,7 +179,6 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
         osX.begin(&obraz);
         osX.setPen(Qt::black);
         osX.setBrush(Qt::black);
-        osX.drawPolygon(grotX,3);
         osX.drawLine(b,size_y-a,size_x-b,size_y-a);
 
         for(double i =fmod(x0,k*skala); i<size_x-20; i=i+skala*k)
@@ -194,7 +195,10 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
             }
 
         }
+        osX.drawLine(b,size_y-a,size_x-b,size_y-a);
         osX.drawText(size_x-30,size_y-a+20,"x[m]");
+        osX.setRenderHint(QPainter::Antialiasing);
+        osX.drawPolygon(grotX,3);
         osX.end();
 
 
@@ -236,6 +240,7 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
 
     else
     {
+        x0=10;
         QPointF grotX[3] = {
             QPointF(size_x-b,size_y-a),
             QPointF(size_x-b-d,size_y-a+c),
@@ -308,6 +313,8 @@ void rysujSiatka(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
 {
     double maxX,minX,maxY;
 
+    QRgb kolor_siatki=qRgb(220,220,220);
+
     maxX=max_x(p);
     maxY=max_y(p);
     minX=min_x(p);
@@ -347,7 +354,7 @@ void rysujSiatka(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
 
     QPainter siatka;
     siatka.begin(&obraz);
-    siatka.setPen(Qt::lightGray);
+    siatka.setPen(kolor_siatki);
     for(double i=fmod(x0,k*skala); i<size_x-1; i=i+k*skala)
         siatka.drawLine(i,0,i,size_y);
     for(double i=size_y-a; i>0; i=i-k*skala)

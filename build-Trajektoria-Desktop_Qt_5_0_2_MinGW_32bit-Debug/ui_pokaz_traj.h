@@ -25,7 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_pokaz_traj
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QLabel *label;
@@ -38,17 +38,20 @@ public:
         pokaz_traj->resize(700, 510);
         pokaz_traj->setMinimumSize(QSize(680, 510));
         pokaz_traj->setMaximumSize(QSize(700, 510));
-        widget = new QWidget(pokaz_traj);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(0, 10, 701, 491));
-        horizontalLayout = new QHBoxLayout(widget);
+        QIcon icon;
+        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pokaz_traj->setWindowIcon(icon);
+        layoutWidget = new QWidget(pokaz_traj);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(0, 10, 701, 491));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(640, 480));
         label->setMaximumSize(QSize(640, 480));

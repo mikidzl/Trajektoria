@@ -52,7 +52,7 @@ public:
         SaveDialog->setMinimumSize(QSize(320, 240));
         SaveDialog->setMaximumSize(QSize(320, 240));
         QIcon icon;
-        icon.addFile(QStringLiteral("../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
         SaveDialog->setWindowIcon(icon);
         layoutWidget = new QWidget(SaveDialog);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));

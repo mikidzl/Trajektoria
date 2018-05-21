@@ -39,7 +39,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png</normaloff>../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png</iconset>
+    <normaloff>ikona2.png</normaloff>ikona2.png</iconset>
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
@@ -526,6 +526,19 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pB_statystyki">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>290</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Statystyki</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="enabled">
@@ -540,7 +553,7 @@
     </rect>
    </property>
    <property name="autoFillBackground">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
@@ -565,6 +578,9 @@
     <addaction name="actionTam"/>
    </widget>
    <widget class="QMenu" name="menuPomoc">
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
     <property name="title">
      <string>Pomoc</string>
     </property>

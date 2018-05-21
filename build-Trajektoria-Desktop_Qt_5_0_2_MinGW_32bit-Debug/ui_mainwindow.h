@@ -70,6 +70,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *pB_start;
     QPushButton *pB_zapisz;
+    QPushButton *pB_statystyki;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuPomoc;
@@ -90,7 +91,7 @@ public:
         MainWindow->setFocusPolicy(Qt::WheelFocus);
         MainWindow->setContextMenuPolicy(Qt::NoContextMenu);
         QIcon icon;
-        icon.addFile(QStringLiteral("../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
         MainWindow->setWindowOpacity(1);
         MainWindow->setAutoFillBackground(false);
@@ -300,12 +301,15 @@ public:
 
         horizontalLayout_2->addWidget(pB_zapisz);
 
+        pB_statystyki = new QPushButton(centralWidget);
+        pB_statystyki->setObjectName(QStringLiteral("pB_statystyki"));
+        pB_statystyki->setGeometry(QRect(40, 290, 93, 28));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setEnabled(true);
         menuBar->setGeometry(QRect(0, 0, 570, 26));
-        menuBar->setAutoFillBackground(false);
+        menuBar->setAutoFillBackground(true);
         menuBar->setStyleSheet(QStringLiteral(""));
         menuBar->setDefaultUp(false);
         menuMenu = new QMenu(menuBar);
@@ -315,6 +319,7 @@ public:
         menuMenu->setTearOffEnabled(false);
         menuPomoc = new QMenu(menuBar);
         menuPomoc->setObjectName(QStringLiteral("menuPomoc"));
+        menuPomoc->setAutoFillBackground(true);
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -378,6 +383,7 @@ public:
         pb_pokaz->setText(QApplication::translate("MainWindow", "Poka\305\274", 0));
         pB_start->setText(QApplication::translate("MainWindow", "OBLICZ", 0));
         pB_zapisz->setText(QApplication::translate("MainWindow", "Zapisz", 0));
+        pB_statystyki->setText(QApplication::translate("MainWindow", "Statystyki", 0));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", 0));
         menuPomoc->setTitle(QApplication::translate("MainWindow", "Pomoc", 0));
     } // retranslateUi

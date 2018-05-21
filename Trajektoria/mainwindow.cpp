@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     atmosfera = true;
 
     traj_obraz = new pokazTraj(this);
+    staty = new statystyki(this);
 }
 
 MainWindow::~MainWindow()
@@ -176,7 +177,7 @@ void MainWindow::on_actionInstrukcja_triggered()
 
 void MainWindow::aktualizuj_traj()
 {
-    if(traj_obraz->isVisible())
+    if(traj_obraz->isVisible() || staty->isVisible())
     {
         Trajektoria(W,S,O,atmosfera,g);
         emit(przeslij_liste(g));
@@ -191,3 +192,10 @@ void MainWindow::strzalki()
 }
 
 
+
+void MainWindow::on_pB_statystyki_clicked()
+{
+    Trajektoria(W,S,O,atmosfera,g);
+    emit(przeslij_liste(g));
+    staty->show();
+}

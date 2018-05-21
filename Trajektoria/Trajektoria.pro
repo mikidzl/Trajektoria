@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     analiza.cpp \
     autor.cpp \
     obraz.cpp \
-    pokaz_traj.cpp
+    pokaz_traj.cpp \
+    statystyki.cpp
 
 HEADERS  += mainwindow.h \
     trajektoria.h \
@@ -36,9 +37,11 @@ HEADERS  += mainwindow.h \
     analiza.h \
     autor.h \
     obraz.h \
-    pokaz_traj.h
+    pokaz_traj.h \
+    statystyki.h
 
 FORMS    += mainwindow.ui \
     savedialog.ui \
     autor.ui \
-    pokaz_traj.ui
+    pokaz_traj.ui \
+    statystyki.ui

@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png</normaloff>../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png</iconset>
+    <normaloff>ikona2.png</normaloff>ikona2.png</iconset>
   </property>
   <property name="statusTip">
    <string extracomment="co to"/>

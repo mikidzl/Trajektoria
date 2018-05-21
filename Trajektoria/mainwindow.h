@@ -8,6 +8,7 @@
 #include "savedialog.h"
 #include "autor.h"
 #include "pokaz_traj.h"
+#include "statystyki.h"
 
 #include "punkt.h"
 #include "trajektoria.h"
@@ -72,6 +73,8 @@ private slots:
 
     void strzalki();
 
+    void on_pB_statystyki_clicked();
+
 private:
     Ui::MainWindow *ui;
     Punkt *g;
@@ -79,6 +82,7 @@ private:
     autor *autor_dialog;
     pokazTraj *traj_obraz;
     QScrollArea *instrukcja;
+    statystyki *staty;
 
 
 };

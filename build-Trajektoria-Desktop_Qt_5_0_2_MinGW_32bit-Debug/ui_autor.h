@@ -50,11 +50,14 @@ public:
         autor->resize(250, 120);
         autor->setMinimumSize(QSize(250, 120));
         autor->setMaximumSize(QSize(250, 120));
+        QIcon icon;
+        icon.addFile(QStringLiteral("ikona2.png"), QSize(), QIcon::Normal, QIcon::Off);
+        autor->setWindowIcon(icon);
         autor->setModal(true);
         label_5 = new QLabel(autor);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 20, 71, 71));
-        label_5->setPixmap(QPixmap(QString::fromUtf8("../build-Trajektoria_v03-Desktop_Qt_5_0_2_MinGW_32bit-Debug/ikona2.png")));
+        label_5->setPixmap(QPixmap(QString::fromUtf8("ikona2.png")));
         label_5->setScaledContents(true);
         layoutWidget = new QWidget(autor);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));

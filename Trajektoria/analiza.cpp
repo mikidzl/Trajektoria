@@ -48,3 +48,11 @@ double max_v(Punkt *p)
     }
     return maxv;
 }
+
+
+double x_kon(Punkt *p)
+{
+    while(p->n!=0)
+        p=p->n;
+    return p->x;
+}
