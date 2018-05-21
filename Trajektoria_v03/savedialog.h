@@ -23,8 +23,6 @@ signals:
 private slots:
     void on_pB_zapisz_clicked();
 
-    void on_lE_nazwa_pliku_textEdited(const QString &arg1);
-
     void on_pB_anuluj_clicked();
 
 

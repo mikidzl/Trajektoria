@@ -58,8 +58,6 @@ private slots:
 
     void on_pB_zapisz_clicked();
 
-    void on_LE_nazwa_pliku_textEdited(const QString &arg1);
-
     void on_cB_obiekt_currentIndexChanged(int index);
 
     void on_cB_atmosfera_clicked(bool checked);
