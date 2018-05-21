@@ -33,6 +33,7 @@ private:
     Ui::statystyki *ui;
     Punkt *p;
     double t;
+    double maxV;
 };
 
 #endif // STATYSTYKI_H
