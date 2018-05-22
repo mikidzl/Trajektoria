@@ -18,7 +18,14 @@ MainWindow::MainWindow(QWidget *parent) :
     S[1]=Ro;
     S[2]=Skok;
 
-    ladowanie_bazy(Ob);
+    if((ladowanie_bazy(Ob)))
+    {
+        ui->statusBar->showMessage("Baza obiektów pomyślnie załadowana",2000);
+    }
+    else
+    {
+        ui->statusBar->showMessage("Błąd: Nie znaleziono pliku \"Baza_obiektow.txt\" ");
+    }
 
     indx=0;
 

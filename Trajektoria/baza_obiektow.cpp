@@ -1,7 +1,10 @@
 #include "baza_obiektow.h"
 
 
-void ladowanie_bazy(double Ob[][3])
+bool ladowanie_bazy(double Ob[][3])
 {
-    wczytaj_baze("Baza_obiektow.txt",Ob);
+    if(wczytaj_baze("Baza_obiektow.txt",Ob))
+        return true;
+
+    return false;
 }

@@ -30,6 +30,8 @@ public:
     QPushButton *pB_wykres;
     QLabel *czasLotu;
     QLabel *label_2;
+    QLabel *label_3;
+    QLabel *ymax;
 
     void setupUi(QDialog *statystyki)
     {
@@ -97,6 +99,23 @@ public:
         label_2 = new QLabel(statystyki);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(130, 130, 31, 16));
+        label_3 = new QLabel(statystyki);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(80, 80, 53, 16));
+        ymax = new QLabel(statystyki);
+        ymax->setObjectName(QStringLiteral("ymax"));
+        ymax->setGeometry(QRect(170, 80, 61, 16));
+        QPalette palette3;
+        palette3.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette3.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        ymax->setPalette(palette3);
+        ymax->setAutoFillBackground(true);
+        ymax->setFrameShape(QFrame::Box);
+        ymax->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         retranslateUi(statystyki);
 
@@ -113,6 +132,8 @@ public:
         pB_wykres->setText(QApplication::translate("statystyki", "Wykres pr\304\231dko\305\233ci", 0));
         czasLotu->setText(QApplication::translate("statystyki", "0s", 0));
         label_2->setText(QApplication::translate("statystyki", "Czas:", 0));
+        label_3->setText(QApplication::translate("statystyki", "TextLabel", 0));
+        ymax->setText(QApplication::translate("statystyki", "0m", 0));
     } // retranslateUi
 
 };

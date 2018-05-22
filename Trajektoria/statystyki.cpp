@@ -39,8 +39,10 @@ void statystyki::aktualizuj_staty(Punkt *p)
     ui->xKon->setText(xKon+"m");
 
     QString cz = QString::number(round(100*t)/100);
-    ui->czasLotu->setText(cz);
+    ui->czasLotu->setText(cz+"s");
 
+    QString maxy = QString::number(round(100*max_y(p))/100);
+    ui->ymax->setText(maxy+"m");
 
 }
 
@@ -86,6 +88,7 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     QPainter krzywa;
     krzywa.begin(&wykres);
     krzywa.setPen(Qt::black);
+    krzywa.setRenderHint(QPainter::Antialiasing);
 
     while(p->n != 0)
     {
@@ -114,6 +117,7 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     osX.drawLine(b,size_y-a,size_x-b,size_y-a);
     osX.setRenderHint(QPainter::Antialiasing);
     osX.drawPolygon(grotX,3);
+    osX.drawText(size_x-25,size_y-5,"t[s]");
     osX.end();
 
     QPointF grotY[3] = {
@@ -130,7 +134,7 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     osY.setRenderHint(QPainter::Antialiasing);
     osY.drawPolygon(grotY,3);
     osY.rotate(-90);
-    osY.drawText(-45,15,"y[m/s]");
+    osY.drawText(-45,15,"v[m/s]");
     osY.end();
 
 
