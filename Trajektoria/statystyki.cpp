@@ -7,6 +7,7 @@ statystyki::statystyki(QWidget *parent) :
 {
     connect(parent,SIGNAL(przeslij_liste(Punkt*)),this,SLOT(przyjmij_liste(Punkt*)));
     ui->setupUi(this);
+    wykres_x= new QLabel;
 
 }
 
@@ -25,6 +26,11 @@ void statystyki::aktualizuj_staty(Punkt *p)
 {
     t=czas(p);
     maxV = max_v(p);
+    if(wykres_x->isVisible())
+    {
+        wykres_rys=rysuj_wykres(p,500,400);
+        wykres_x->setPixmap(wykres_rys);
+    }
 
     QString vmax= QString::number(round(100*maxV)/100);
     ui->vMax->setText(vmax+"m/s");
@@ -43,16 +49,14 @@ void statystyki::pokaz_wykres(Punkt *p)
     int size_x=500;
     int size_y=400;
 
-    QLabel *wykres_x= new QLabel;
-
-    QPixmap wykres=rysuj_wykres(p,size_x,size_y);
+    wykres_rys=rysuj_wykres(p,size_x,size_y);
 
     wykres_x->move(700,400);
     wykres_x->setWindowTitle("Wykres prędkości");
     wykres_x->setWindowIcon(QIcon("ikona.png"));
     wykres_x->setMinimumSize(size_x,size_y);
     wykres_x->setMaximumSize(size_x,size_y);
-    wykres_x->setPixmap(wykres);
+    wykres_x->setPixmap(wykres_rys);
 
     wykres_x->show();
 }
@@ -79,16 +83,22 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
 
     int i=0;
 
+    QPainter krzywa;
+    krzywa.begin(&wykres);
+    krzywa.setPen(Qt::black);
 
-    while(p != 0)
+    while(p->n != 0)
     {
-        double x=a+i*skok/(t)*(size_x-2*a);
-        double y=size_y-a-hypot(p->vx,p->vy)/maxV*(size_y-2*a);
-        wykres.setPixel(x,y,Qt::black);
+        double x1=a+i*skok/(t)*(size_x-2*a);
+        double y1=size_y-a-hypot(p->vx,p->vy)/maxV*(size_y-2*a);
+        double x2=a+(i+1)*skok/(t)*(size_x-2*a);
+        double y2=size_y-a-hypot(p->n->vx,p->n->vy)/maxV*(size_y-2*a);
+
+        krzywa.drawLine(x1,y1,x2,y2);
         i++;
         p=p->n;
     }
-
+    krzywa.end();
 
 
     QPointF grotX[3] = {

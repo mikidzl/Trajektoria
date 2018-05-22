@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QPainter>
+#include <QLabel>
 #include <cmath>
 
 #include "analiza.h"
@@ -32,6 +33,8 @@ private slots:
 private:
     Ui::statystyki *ui;
     Punkt *p;
+    QLabel *wykres_x;
+    QPixmap wykres_rys;
     double t;
     double maxV;
 };
