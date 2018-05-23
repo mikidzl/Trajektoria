@@ -18,16 +18,16 @@ MainWindow::MainWindow(QWidget *parent) :
     S[1]=Ro;
     S[2]=Skok;
 
-    Ob = new obiekt;
+    Ob = wczytaj_baze("Baza_obiektow.txt");
 
-    if((ladowanie_bazy(Ob)))
-    {
-        ui->statusBar->showMessage("Baza obiektów pomyślnie załadowana",2000);
-    }
-    else
-    {
-        ui->statusBar->showMessage("Błąd: Nie znaleziono pliku \"Baza_obiektow.txt\" ");
-    }
+//    if((ladowanie_bazy(Ob)))
+//    {
+//        ui->statusBar->showMessage("Baza obiektów pomyślnie załadowana",2000);
+//    }
+//    else
+//    {
+//        ui->statusBar->showMessage("Błąd: Nie znaleziono pliku \"Baza_obiektow.txt\" ");
+//    }
 
     indx=0;
 

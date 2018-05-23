@@ -35,12 +35,16 @@ bool wczytaj(string nazwa, Punkt *&g)
     return true;
 }
 
-bool wczytaj_baze(string nazwa, obiekt *Ob)
+obiekt* wczytaj_baze(string nazwa)
 {   
     ifstream plik(nazwa.c_str());
 
-    if(!plik.is_open()) return false;
-
+    if(!plik.is_open())
+    {
+        obiekt* O = new obiekt[1];
+        O[0].nazwaOb = '0';
+        return O;
+    }
     string linia;
     int i=0;
     int n=0;
@@ -50,38 +54,20 @@ bool wczytaj_baze(string nazwa, obiekt *Ob)
         n++;
     }
 
-    obiekt *O = new obiekt[n];
+    obiekt* O = new obiekt[n];
 
     while(!plik.eof())
     {
-
-
-
-        plik>> Ob[i].nazwaOb >> Ob[i].Cd >> Ob[i].Masa >> Ob[i].A;
+        plik>> O[i].nazwaOb >> O[i].Cd >> O[i].Masa >> O[i].A;
 
         i++;
     }
 
-    Ob=O;
 
     plik.close();
 
 
-//    if(!plik.is_open()) return false;
-//    i=0;
-
-//    while(!plik.eof())
-//    {
-//        getline(plik,nazwaOb,':');
-
-//        NazwOb = new string;
-//        NazwOb[i] = nazwaOb;
-//        i++;
-//    }
-
-//    plik.close();
-
-    return true;
+    return O;
 }
 
 bool zapisz(string nazwa, Punkt *w)
