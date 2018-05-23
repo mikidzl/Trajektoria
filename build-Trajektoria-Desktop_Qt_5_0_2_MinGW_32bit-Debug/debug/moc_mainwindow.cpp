@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata[401];
+    QByteArrayData data[23];
+    char stringdata[392];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -51,8 +51,7 @@ QT_MOC_LITERAL(18, 275, 24),
 QT_MOC_LITERAL(19, 300, 19),
 QT_MOC_LITERAL(20, 320, 29),
 QT_MOC_LITERAL(21, 350, 15),
-QT_MOC_LITERAL(22, 366, 8),
-QT_MOC_LITERAL(23, 375, 24)
+QT_MOC_LITERAL(22, 366, 24)
     },
     "MainWindow\0przeslij_liste\0\0Punkt*\0g\0"
     "zapiszPlik\0nazwa\0on_pB_start_clicked\0"
@@ -64,8 +63,7 @@ QT_MOC_LITERAL(23, 375, 24)
     "on_cB_atmosfera_clicked\0checked\0"
     "on_actionAutor_triggered\0on_pb_pokaz_clicked\0"
     "on_actionInstrukcja_triggered\0"
-    "aktualizuj_traj\0strzalki\0"
-    "on_pB_statystyki_clicked\0"
+    "aktualizuj_traj\0on_pB_statystyki_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -75,7 +73,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,24 +81,23 @@ static const uint qt_meta_data_MainWindow[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   94,    2, 0x05,
+       1,    1,   89,    2, 0x05,
 
  // slots: name, argc, parameters, tag, flags
-       5,    1,   97,    2, 0x0a,
-       7,    0,  100,    2, 0x08,
-       8,    1,  101,    2, 0x08,
-      10,    1,  104,    2, 0x08,
-      11,    1,  107,    2, 0x08,
-      12,    1,  110,    2, 0x08,
-      13,    0,  113,    2, 0x08,
-      14,    1,  114,    2, 0x08,
-      16,    1,  117,    2, 0x08,
-      18,    0,  120,    2, 0x08,
-      19,    0,  121,    2, 0x08,
-      20,    0,  122,    2, 0x08,
-      21,    0,  123,    2, 0x08,
-      22,    0,  124,    2, 0x08,
-      23,    0,  125,    2, 0x08,
+       5,    1,   92,    2, 0x0a,
+       7,    0,   95,    2, 0x08,
+       8,    1,   96,    2, 0x08,
+      10,    1,   99,    2, 0x08,
+      11,    1,  102,    2, 0x08,
+      12,    1,  105,    2, 0x08,
+      13,    0,  108,    2, 0x08,
+      14,    1,  109,    2, 0x08,
+      16,    1,  112,    2, 0x08,
+      18,    0,  115,    2, 0x08,
+      19,    0,  116,    2, 0x08,
+      20,    0,  117,    2, 0x08,
+      21,    0,  118,    2, 0x08,
+      22,    0,  119,    2, 0x08,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -115,7 +112,6 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   15,
     QMetaType::Void, QMetaType::Bool,   17,
-    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -144,8 +140,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->on_pb_pokaz_clicked(); break;
         case 12: _t->on_actionInstrukcja_triggered(); break;
         case 13: _t->aktualizuj_traj(); break;
-        case 14: _t->strzalki(); break;
-        case 15: _t->on_pB_statystyki_clicked(); break;
+        case 14: _t->on_pB_statystyki_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -185,13 +180,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 15)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 16;
+        _id -= 15;
     }
     return _id;
 }

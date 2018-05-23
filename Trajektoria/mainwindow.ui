@@ -101,6 +101,11 @@
       <string>Piłka plażowa</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>Piłka ping pong</string>
+     </property>
+    </item>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -553,7 +558,7 @@
     </rect>
    </property>
    <property name="autoFillBackground">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
@@ -579,7 +584,7 @@
    </widget>
    <widget class="QMenu" name="menuPomoc">
     <property name="autoFillBackground">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="title">
      <string>Pomoc</string>

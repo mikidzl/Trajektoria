@@ -26,7 +26,7 @@ public slots:
     
 private slots:
     void on_pB_wykres_clicked();
-    QPixmap rysuj_wykres(Punkt *p, int size_x, int size_y);
+    QPixmap rysuj_wykres(Punkt *p);
     void aktualizuj_staty(Punkt *p);
     void pokaz_wykres(Punkt *p);
 
@@ -37,6 +37,8 @@ private:
     QPixmap wykres_rys;
     double t;
     double maxV;
+    int size_x;
+    int size_y;
 };
 
 #endif // STATYSTYKI_H

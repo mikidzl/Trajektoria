@@ -61,7 +61,7 @@ public:
         vMax->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
         l_vMax = new QLabel(statystyki);
         l_vMax->setObjectName(QStringLiteral("l_vMax"));
-        l_vMax->setGeometry(QRect(80, 50, 101, 16));
+        l_vMax->setGeometry(QRect(60, 50, 91, 16));
         label = new QLabel(statystyki);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(60, 100, 121, 16));
@@ -101,7 +101,7 @@ public:
         label_2->setGeometry(QRect(130, 130, 31, 16));
         label_3 = new QLabel(statystyki);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(80, 80, 53, 16));
+        label_3->setGeometry(QRect(30, 80, 141, 16));
         ymax = new QLabel(statystyki);
         ymax->setObjectName(QStringLiteral("ymax"));
         ymax->setGeometry(QRect(170, 80, 61, 16));
@@ -132,7 +132,7 @@ public:
         pB_wykres->setText(QApplication::translate("statystyki", "Wykres pr\304\231dko\305\233ci", 0));
         czasLotu->setText(QApplication::translate("statystyki", "0s", 0));
         label_2->setText(QApplication::translate("statystyki", "Czas:", 0));
-        label_3->setText(QApplication::translate("statystyki", "TextLabel", 0));
+        label_3->setText(QApplication::translate("statystyki", "Wysoko\305\233\304\207 maksymalna:", 0));
         ymax->setText(QApplication::translate("statystyki", "0m", 0));
     } // retranslateUi
 

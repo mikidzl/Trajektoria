@@ -35,27 +35,51 @@ bool wczytaj(string nazwa, Punkt *&g)
     return true;
 }
 
-bool wczytaj_baze(string nazwa, double Ob[][3])
+bool wczytaj_baze(string nazwa, obiekt *Ob)
 {   
     ifstream plik(nazwa.c_str());
 
     if(!plik.is_open()) return false;
 
-    double Cd,Masa,A;
+    string linia;
     int i=0;
+    int n=0;
+
+    while(getline(plik,linia))
+    {
+        n++;
+    }
+
+    obiekt *O = new obiekt[n];
 
     while(!plik.eof())
     {
-        plik>> Cd >> Masa >> A;
 
-        Ob[i][0]=Cd;
-        Ob[i][1]=Masa;
-        Ob[i][2]=A;
+
+
+        plik>> Ob[i].nazwaOb >> Ob[i].Cd >> Ob[i].Masa >> Ob[i].A;
 
         i++;
     }
 
+    Ob=O;
+
     plik.close();
+
+
+//    if(!plik.is_open()) return false;
+//    i=0;
+
+//    while(!plik.eof())
+//    {
+//        getline(plik,nazwaOb,':');
+
+//        NazwOb = new string;
+//        NazwOb[i] = nazwaOb;
+//        i++;
+//    }
+
+//    plik.close();
 
     return true;
 }

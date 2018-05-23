@@ -28,7 +28,7 @@ void statystyki::aktualizuj_staty(Punkt *p)
     maxV = max_v(p);
     if(wykres_x->isVisible())
     {
-        wykres_rys=rysuj_wykres(p,500,400);
+        wykres_rys=rysuj_wykres(p);
         wykres_x->setPixmap(wykres_rys);
     }
 
@@ -48,10 +48,10 @@ void statystyki::aktualizuj_staty(Punkt *p)
 
 void statystyki::pokaz_wykres(Punkt *p)
 {
-    int size_x=500;
-    int size_y=400;
+    size_x=500;
+    size_y=400;
 
-    wykres_rys=rysuj_wykres(p,size_x,size_y);
+    wykres_rys=rysuj_wykres(p);
 
     wykres_x->move(700,400);
     wykres_x->setWindowTitle("Wykres prędkości");
@@ -68,7 +68,7 @@ void statystyki::on_pB_wykres_clicked()
     pokaz_wykres(p);
 }
 
-QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
+QPixmap statystyki::rysuj_wykres(Punkt *p)
 {
     int a = 25;
     int b = 5;          //odleglosc od krawedzi

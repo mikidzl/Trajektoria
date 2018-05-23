@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_statystyki_t {
-    QByteArrayData data[11];
-    char stringdata[115];
+    QByteArrayData data[9];
+    char stringdata[101];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,15 +36,12 @@ QT_MOC_LITERAL(3, 27, 6),
 QT_MOC_LITERAL(4, 34, 1),
 QT_MOC_LITERAL(5, 36, 20),
 QT_MOC_LITERAL(6, 57, 12),
-QT_MOC_LITERAL(7, 70, 6),
-QT_MOC_LITERAL(8, 77, 6),
-QT_MOC_LITERAL(9, 84, 16),
-QT_MOC_LITERAL(10, 101, 12)
+QT_MOC_LITERAL(7, 70, 16),
+QT_MOC_LITERAL(8, 87, 12)
     },
     "statystyki\0przyjmij_liste\0\0Punkt*\0p\0"
     "on_pB_wykres_clicked\0rysuj_wykres\0"
-    "size_x\0size_y\0aktualizuj_staty\0"
-    "pokaz_wykres\0"
+    "aktualizuj_staty\0pokaz_wykres\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,14 +61,14 @@ static const uint qt_meta_data_statystyki[] = {
  // slots: name, argc, parameters, tag, flags
        1,    1,   39,    2, 0x0a,
        5,    0,   42,    2, 0x08,
-       6,    3,   43,    2, 0x08,
-       9,    1,   50,    2, 0x08,
-      10,    1,   53,    2, 0x08,
+       6,    1,   43,    2, 0x08,
+       7,    1,   46,    2, 0x08,
+       8,    1,   49,    2, 0x08,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void,
-    QMetaType::QPixmap, 0x80000000 | 3, QMetaType::Int, QMetaType::Int,    4,    7,    8,
+    QMetaType::QPixmap, 0x80000000 | 3,    4,
     QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, 0x80000000 | 3,    4,
 
@@ -85,7 +82,7 @@ void statystyki::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->przyjmij_liste((*reinterpret_cast< Punkt*(*)>(_a[1]))); break;
         case 1: _t->on_pB_wykres_clicked(); break;
-        case 2: { QPixmap _r = _t->rysuj_wykres((*reinterpret_cast< Punkt*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])));
+        case 2: { QPixmap _r = _t->rysuj_wykres((*reinterpret_cast< Punkt*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QPixmap*>(_a[0]) = _r; }  break;
         case 3: _t->aktualizuj_staty((*reinterpret_cast< Punkt*(*)>(_a[1]))); break;
         case 4: _t->pokaz_wykres((*reinterpret_cast< Punkt*(*)>(_a[1]))); break;

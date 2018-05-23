@@ -30,12 +30,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-    double G,Cd,A,Ro,Masa,Skok;
-    double S[6],W[4],O[3];
-    double Ob[4][3];
-    string nazwa_pliku;
-    bool atmosfera;
-    int indx;
+    obiekt *Ob;
 
 public slots:
     void zapiszPlik(QString nazwa);
@@ -71,8 +66,6 @@ private slots:
 
     void aktualizuj_traj();
 
-    void strzalki();
-
     void on_pB_statystyki_clicked();
 
 private:
@@ -83,6 +76,11 @@ private:
     pokazTraj *traj_obraz;
     QScrollArea *instrukcja;
     statystyki *staty;
+    double G,Ro,Skok;
+    double S[6],W[4],O[3];
+    string nazwa_pliku;
+    bool atmosfera;
+    int indx;
 
 
 };

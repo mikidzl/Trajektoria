@@ -4,6 +4,11 @@
 #include <cmath>
 #include "pliki.h"
 
-bool ladowanie_bazy(double Ob[][3]);
+struct obiekt{
+    string nazwaOb;
+    double Cd,A,Masa;
+};
+
+bool ladowanie_bazy(obiekt *Ob);
 
 #endif // BAZA_OBIEKTOW_H

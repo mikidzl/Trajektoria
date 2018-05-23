@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     S[1]=Ro;
     S[2]=Skok;
 
+    Ob = new obiekt;
+
     if((ladowanie_bazy(Ob)))
     {
         ui->statusBar->showMessage("Baza obiektów pomyślnie załadowana",2000);
@@ -29,13 +31,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     indx=0;
 
-    Cd=Ob[indx][0];
-    Masa=Ob[indx][1];
-    A=Ob[indx][2];
-
-    O[0]=Cd;
-    O[1]=Masa;
-    O[2]=A;
+    O[0]=Ob[indx].Cd;
+    O[1]=Ob[indx].Masa;
+    O[2]=Ob[indx].A;
 
     W[0]=10;
     W[1]=M_PI_4;
@@ -123,9 +121,9 @@ void MainWindow::on_hS_wiatr_valueChanged(int value)
 
 void MainWindow::on_cB_obiekt_currentIndexChanged(int index)
 {
-    O[0]=Ob[index][0];
-    O[1]=Ob[index][1];
-    O[2]=Ob[index][2];
+    O[0]=Ob[index].Cd;
+    O[1]=Ob[index].Masa;
+    O[2]=Ob[index].A;
     aktualizuj_traj();
 }
 
@@ -190,14 +188,6 @@ void MainWindow::aktualizuj_traj()
         emit(przeslij_liste(g));
     }
 }
-
-void MainWindow::strzalki()
-{
-    if(Qt::LeftArrow)
-        W[1]=W[1]+1;
-    aktualizuj_traj();
-}
-
 
 
 void MainWindow::on_pB_statystyki_clicked()
