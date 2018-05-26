@@ -90,21 +90,27 @@ void rysujTrajektorie(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
             traj.drawLine(x1,y1,x2,y2);
             traj.end();
 
-//            obraz.setPixel(x,y,kolor_krzywej);
-//            obraz.setPixel(x,y+1, kolor_krzywej);                  //pogrubienie lini
             p=p->n;
         }
     }
     else
     {
 
-        while(p!=0)
+        while(p->n!=0)
         {
-            int x=a+int((p->x+minX)/maxY*(size_y-2*a));
-            int y=int((size_y-2*a)*(1-(p->y)/(maxY)))+a;
+            double x1=a+int((p->x+minX)/maxY*(size_y-2*a));
+            double y1=int((size_y-2*a)*(1-(p->y)/(maxY)))+a;
+            double x2=a+int((p->n->x+minX)/maxY*(size_y-2*a));
+            double y2=int((size_y-2*a)*(1-(p->n->y)/(maxY)))+a;
 
-            obraz.setPixel(x,y, kolor_krzywej);
-            //obraz.setPixel(x+1,y, kolor_krzywej);                       //pogrubienie lini
+
+            QPainter traj;
+            traj.begin(&obraz);
+            traj.setRenderHint(QPainter::Antialiasing);
+            traj.setPen(kolor_krzywej);
+            traj.drawLine(x1,y1,x2,y2);
+            traj.end();
+
             p=p->n;
         }
     }
@@ -139,6 +145,12 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
         minX=min_x(p);          // skrajne punkty trajektorii do przeskalowania osi
         maxX=max_x(p);
         maxY=max_y(p);
+
+
+        if( minX+maxX < 2  && maxY < 2)             //dobranie podziałki do zakresu
+            k=0.2;
+        if( minX+maxX < 1  && maxY < 1)
+            k=0.1;
 
         if( minX+maxX >= 20  || maxY >= 20)
             k=5;
@@ -314,7 +326,8 @@ void rysujSiatka(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
 {
     double maxX,minX,maxY;
 
-    QRgb kolor_siatki=qRgb(220,220,220);
+    int g=220;
+    QRgb kolor_siatki=qRgb(g,g,g);
 
     maxX=max_x(p);
     maxY=max_y(p);
@@ -322,7 +335,12 @@ void rysujSiatka(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
 
     double skala;
     int x0;
-    int k=1;            //podziałka
+    double k=1;            //podziałka
+
+    if( minX+maxX <2 && maxY < 2)
+        k=0.2;
+    if( minX+maxX < 1  && maxY < 1)
+        k=0.1;
 
     if( minX+maxX >= 20  || maxY >= 20)
         k=5;

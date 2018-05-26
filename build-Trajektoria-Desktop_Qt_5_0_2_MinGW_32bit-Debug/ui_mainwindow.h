@@ -309,7 +309,7 @@ public:
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setEnabled(true);
         menuBar->setGeometry(QRect(0, 0, 570, 26));
-        menuBar->setAutoFillBackground(true);
+        menuBar->setAutoFillBackground(false);
         menuBar->setStyleSheet(QStringLiteral(""));
         menuBar->setDefaultUp(false);
         menuMenu = new QMenu(menuBar);
@@ -319,7 +319,7 @@ public:
         menuMenu->setTearOffEnabled(false);
         menuPomoc = new QMenu(menuBar);
         menuPomoc->setObjectName(QStringLiteral("menuPomoc"));
-        menuPomoc->setAutoFillBackground(true);
+        menuPomoc->setAutoFillBackground(false);
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -367,6 +367,7 @@ public:
          << QApplication::translate("MainWindow", "Pi\305\202ka golfowa", 0)
          << QApplication::translate("MainWindow", "Pi\305\202ka koszykowa", 0)
          << QApplication::translate("MainWindow", "Pi\305\202ka pla\305\274owa", 0)
+         << QApplication::translate("MainWindow", "Ping-pongowa", 0)
         );
         label_2->setText(QApplication::translate("MainWindow", "Pr\304\231dko\305\233\304\207:", 0));
         sB_predkosc->setSpecialValueText(QString());

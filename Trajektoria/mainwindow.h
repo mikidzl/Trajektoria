@@ -32,7 +32,7 @@ public:
 
     double G,Cd,A,Ro,Masa,Skok;
     double S[6],W[4],O[3];
-    double Ob[4][3];
+    double Ob[5][3];
     string nazwa_pliku;
     bool atmosfera;
     int indx;

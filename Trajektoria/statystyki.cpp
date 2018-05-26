@@ -76,12 +76,19 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     int d = 10;         //dlugosc grota
     double skok=0.01;
 
+
     QImage wykres(size_x,size_y,QImage::Format_RGB32);
 
     wykres.fill(Qt::white);
 
-    double skala=(size_x-2*a)/t;
+    double skalaT=(size_x-2*a)/t;
+    double kT=1;
 
+    double skalaV=(size_y-2*a)/maxV;
+    double kV=1;
+
+    if(t<2)
+        kT=0.2;
 
     int i=0;
 
@@ -92,10 +99,10 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
 
     while(p->n != 0)
     {
-        double x1=a+i*skok/(t)*(size_x-2*a);
-        double y1=size_y-a-hypot(p->vx,p->vy)/maxV*(size_y-2*a);
-        double x2=a+(i+1)*skok/(t)*(size_x-2*a);
-        double y2=size_y-a-hypot(p->n->vx,p->n->vy)/maxV*(size_y-2*a);
+        double x1=a+i*skok*skalaT;
+        double y1=size_y-a-hypot(p->vx,p->vy)*skalaV;
+        double x2=a+(i+1)*skok*skalaT;
+        double y2=size_y-a-hypot(p->n->vx,p->n->vy)*skalaV;
 
         krzywa.drawLine(x1,y1,x2,y2);
         i++;
@@ -115,10 +122,22 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     osX.setPen(Qt::black);
     osX.setBrush(Qt::black);
     osX.drawLine(b,size_y-a,size_x-b,size_y-a);
+    for(double i=a+kT*skalaT; i<size_x-20; i=i+kT*skalaT)
+    {
+        double j;
+        osX.drawLine(i,size_y-a-5,i,size_y-a+5);
+        if(size_x-50> i)
+        {
+            j = (i-a)/skalaT;
+            QString s= QString::number(j);
+            osX.drawText(i+2,size_y-a+15,s);
+        }
+    }
     osX.setRenderHint(QPainter::Antialiasing);
     osX.drawPolygon(grotX,3);
-    osX.drawText(size_x-25,size_y-5,"t[s]");
+    osX.drawText(size_x-23,size_y-5,"t[s]");
     osX.end();
+
 
     QPointF grotY[3] = {
         QPointF(a,b),
@@ -131,6 +150,17 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     osY.setPen(Qt::black);
     osY.setBrush(Qt::black);
     osY.drawLine(a,size_y-b,a,b);
+    for(double i=size_y-a-kV*skalaV; i>20; i=i-kV*skalaV)
+    {
+        double j;
+        osY.drawLine(a-5,i,a+5,i);
+        if(i > 50)
+        {
+            j = (size_y-a-i)/skalaV;
+            QString s= QString::number(j);
+            osY.drawText(a-15,i+5,s);
+        }
+    }
     osY.setRenderHint(QPainter::Antialiasing);
     osY.drawPolygon(grotY,3);
     osY.rotate(-90);

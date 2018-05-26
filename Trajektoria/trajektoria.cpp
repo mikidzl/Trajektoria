@@ -50,23 +50,28 @@ void Parabola(Punkt *&p)
     p=p->n;
     p->x=V0*cos(Alfa)*Skok*i;
     p->y=H+V0*sin(Alfa)*Skok*i-G*pow(Skok*i,2)/2;
+    p->vx=V0*cos(Alfa);
+    p->vy=V0*sin(Alfa)-G*Skok*i;
     p->n=0;
 }
 
-double Trajektoria(double W[],double S[], double O[], bool atmosfera, Punkt *&g)
+double Trajektoria(double W[], double S[], double O[], bool atmosfera, Punkt *&g)
 {
     G=S[0];                 //stałe
     Ro=S[1];
     Skok=S[2];
 
-    Cd=O[0];
+    Cd=O[0];                //parametry obiektu
     Masa=O[1];
     A=O[2];
 
-    V0=W[0];
+    V0=W[0];                //wartości początkowe
     Alfa=W[1];
     H=W[2];
-    U=W[3];                 //prędkość wiatru
+    U=W[3];
+
+    if(g != 0)              //usunięcie starej trajektorii przed zapisem nowej
+        usun(g->n);
 
     g=new Punkt;
     g->x=0;                 //wartości początkowe
@@ -75,9 +80,6 @@ double Trajektoria(double W[],double S[], double O[], bool atmosfera, Punkt *&g)
     g->vy=V0*sin(Alfa);
 
     Punkt *p=g;
-
-//    if(g !=0)
-//        usun(g->n);
 
     i=0;
 
@@ -103,5 +105,6 @@ double Trajektoria(double W[],double S[], double O[], bool atmosfera, Punkt *&g)
             i++;
         }
     }
+
     return i*Skok;          //zwraca czas
 }
