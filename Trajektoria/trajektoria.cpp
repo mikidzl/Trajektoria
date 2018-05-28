@@ -78,6 +78,7 @@ double Trajektoria(double W[], double S[], double O[], bool atmosfera, Punkt *&g
     g->y=H;
     g->vx=V0*cos(Alfa);
     g->vy=V0*sin(Alfa);
+    g->n=0;
 
     Punkt *p=g;
 

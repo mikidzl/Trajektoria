@@ -9,7 +9,7 @@ pokazTraj::pokazTraj(QWidget *parent) :
 
     ui->setupUi(this);
 
-
+    nazwa = "trajektoria";
 }
 
 pokazTraj::~pokazTraj()
@@ -21,6 +21,12 @@ void pokazTraj::zrob_trajektorie(Punkt *p)
 {
     obraz = tworzObraz(p,640,480);
 
-    ui->label->setPixmap(obraz);
+    ui->label_trajektoria->setPixmap(obraz);
 
+}
+
+void pokazTraj::on_pB_zapisz_clicked()
+{
+    nazwa = ui->line_nazwa->text();
+    obraz.save(nazwa+".bmp","BMP",-1);
 }

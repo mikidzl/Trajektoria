@@ -25,12 +25,6 @@ QPixmap tworzObraz(Punkt *p, int size_x, int size_y)
     //wybuch(obraz,p,size_x,size_y,a);
 
 
-
-
-    obraz.setText("Description","Dziala");
-    obraz.save("image.bmp","BMP",-1);
-
-
     return QPixmap::fromImage(obraz);
 }
 
@@ -138,7 +132,7 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
     double skala=(size_x-2*a)/10;
 
 
-    if(p!=0)
+    if(p->n->n!=0)
     {
         double minX,maxX,maxY;
 
@@ -253,7 +247,7 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
 
     else
     {
-        x0=10;
+        x0=a;
         QPointF grotX[3] = {
             QPointF(size_x-b,size_y-a),
             QPointF(size_x-b-d,size_y-a+c),

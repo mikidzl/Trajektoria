@@ -85,6 +85,7 @@ public:
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         lE_nazwa_pliku = new QLineEdit(layoutWidget1);
         lE_nazwa_pliku->setObjectName(QStringLiteral("lE_nazwa_pliku"));
+        lE_nazwa_pliku->setMaxLength(100);
         lE_nazwa_pliku->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
         horizontalLayout_2->addWidget(lE_nazwa_pliku);

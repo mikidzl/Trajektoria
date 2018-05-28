@@ -53,7 +53,7 @@ void statystyki::pokaz_wykres(Punkt *p)
 
     wykres_rys=rysuj_wykres(p,size_x,size_y);
 
-    wykres_x->move(700,400);
+    wykres_x->move(700,450);
     wykres_x->setWindowTitle("Wykres prędkości");
     wykres_x->setWindowIcon(QIcon("ikona.png"));
     wykres_x->setMinimumSize(size_x,size_y);

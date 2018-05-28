@@ -22,9 +22,13 @@ public slots:
     void zrob_trajektorie(Punkt *p);
 
     
+private slots:
+    void on_pB_zapisz_clicked();
+
 private:
     Ui::pokaz_traj *ui;
     QPixmap obraz;
+    QString nazwa;
 };
 
 

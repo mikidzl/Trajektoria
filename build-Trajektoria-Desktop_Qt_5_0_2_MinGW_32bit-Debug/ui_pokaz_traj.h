@@ -17,6 +17,8 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
@@ -28,16 +30,22 @@ public:
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
-    QLabel *label;
+    QLabel *label_trajektoria;
     QSpacerItem *horizontalSpacer_2;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pB_zapisz;
+    QLineEdit *line_nazwa;
+    QLabel *label;
 
     void setupUi(QDialog *pokaz_traj)
     {
         if (pokaz_traj->objectName().isEmpty())
             pokaz_traj->setObjectName(QStringLiteral("pokaz_traj"));
-        pokaz_traj->resize(700, 510);
-        pokaz_traj->setMinimumSize(QSize(680, 510));
-        pokaz_traj->setMaximumSize(QSize(700, 510));
+        pokaz_traj->resize(700, 550);
+        pokaz_traj->setMinimumSize(QSize(680, 550));
+        pokaz_traj->setMaximumSize(QSize(700, 550));
+        pokaz_traj->setCursor(QCursor(Qt::ArrowCursor));
         QIcon icon;
         icon.addFile(QStringLiteral("ikona.png"), QSize(), QIcon::Normal, QIcon::Off);
         pokaz_traj->setWindowIcon(icon);
@@ -51,18 +59,41 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        label = new QLabel(layoutWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setMinimumSize(QSize(640, 480));
-        label->setMaximumSize(QSize(640, 480));
-        label->setFrameShape(QFrame::Box);
-        label->setFrameShadow(QFrame::Plain);
+        label_trajektoria = new QLabel(layoutWidget);
+        label_trajektoria->setObjectName(QStringLiteral("label_trajektoria"));
+        label_trajektoria->setMinimumSize(QSize(640, 480));
+        label_trajektoria->setMaximumSize(QSize(640, 480));
+        label_trajektoria->setFrameShape(QFrame::Box);
+        label_trajektoria->setFrameShadow(QFrame::Plain);
 
-        horizontalLayout->addWidget(label);
+        horizontalLayout->addWidget(label_trajektoria);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
+
+        widget = new QWidget(pokaz_traj);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(390, 510, 275, 30));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        pB_zapisz = new QPushButton(widget);
+        pB_zapisz->setObjectName(QStringLiteral("pB_zapisz"));
+
+        horizontalLayout_2->addWidget(pB_zapisz);
+
+        line_nazwa = new QLineEdit(widget);
+        line_nazwa->setObjectName(QStringLiteral("line_nazwa"));
+        line_nazwa->setMaxLength(100);
+        line_nazwa->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        horizontalLayout_2->addWidget(line_nazwa);
+
+        label = new QLabel(widget);
+        label->setObjectName(QStringLiteral("label"));
+
+        horizontalLayout_2->addWidget(label);
 
 
         retranslateUi(pokaz_traj);
@@ -72,8 +103,11 @@ public:
 
     void retranslateUi(QDialog *pokaz_traj)
     {
-        pokaz_traj->setWindowTitle(QApplication::translate("pokaz_traj", "Dialog", 0));
-        label->setText(QString());
+        pokaz_traj->setWindowTitle(QApplication::translate("pokaz_traj", "Wykres trajektorii", 0));
+        label_trajektoria->setText(QString());
+        pB_zapisz->setText(QApplication::translate("pokaz_traj", "Zapisz jako...", 0));
+        line_nazwa->setText(QApplication::translate("pokaz_traj", "trajektoria", 0));
+        label->setText(QApplication::translate("pokaz_traj", ".bmp", 0));
     } // retranslateUi
 
 };

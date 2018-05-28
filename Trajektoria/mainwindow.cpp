@@ -57,15 +57,6 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_pB_start_clicked()
-{
-    Trajektoria(W,S,O,atmosfera,g);
-
-    ui->statusBar->showMessage("Trajektoria pomyślnie przeliczona", 1500);
-
-}
-
-
 void MainWindow::zapiszPlik(QString nazwa)
 {
     if(nazwa == "Baza_obiektow")

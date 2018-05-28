@@ -492,33 +492,20 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pb_pokaz">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>250</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Pokaż</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>200</x>
       <y>250</y>
-      <width>195</width>
+      <width>295</width>
       <height>30</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QPushButton" name="pB_start">
+      <widget class="QPushButton" name="pB_statystyki">
        <property name="text">
-        <string>OBLICZ</string>
+        <string>Analiza</string>
        </property>
       </widget>
      </item>
@@ -529,20 +516,14 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pb_pokaz">
+       <property name="text">
+        <string>Rysuj</string>
+       </property>
+      </widget>
+     </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="pB_statystyki">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>290</y>
-      <width>93</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Analiza</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

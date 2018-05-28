@@ -132,7 +132,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->przeslij_liste((*reinterpret_cast< Punkt*(*)>(_a[1]))); break;
         case 1: _t->zapiszPlik((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 2: _t->on_pB_start_clicked(); break;
         case 3: _t->on_hS_predkosc_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 4: _t->on_hS_kat_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->on_hS_wysokosc_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;

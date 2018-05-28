@@ -65,12 +65,11 @@ public:
     QSlider *hS_wiatr;
     QSpinBox *sB_wiatr;
     QCheckBox *cB_atmosfera;
-    QPushButton *pb_pokaz;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pB_start;
-    QPushButton *pB_zapisz;
     QPushButton *pB_statystyki;
+    QPushButton *pB_zapisz;
+    QPushButton *pb_pokaz;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuPomoc;
@@ -280,30 +279,29 @@ public:
         cB_atmosfera->setObjectName(QStringLiteral("cB_atmosfera"));
         cB_atmosfera->setGeometry(QRect(40, 250, 191, 23));
         cB_atmosfera->setChecked(true);
-        pb_pokaz = new QPushButton(centralWidget);
-        pb_pokaz->setObjectName(QStringLiteral("pb_pokaz"));
-        pb_pokaz->setGeometry(QRect(450, 250, 93, 28));
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(240, 250, 195, 30));
+        layoutWidget1->setGeometry(QRect(200, 250, 295, 30));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        pB_start = new QPushButton(layoutWidget1);
-        pB_start->setObjectName(QStringLiteral("pB_start"));
+        pB_statystyki = new QPushButton(layoutWidget1);
+        pB_statystyki->setObjectName(QStringLiteral("pB_statystyki"));
 
-        horizontalLayout_2->addWidget(pB_start);
+        horizontalLayout_2->addWidget(pB_statystyki);
 
         pB_zapisz = new QPushButton(layoutWidget1);
         pB_zapisz->setObjectName(QStringLiteral("pB_zapisz"));
 
         horizontalLayout_2->addWidget(pB_zapisz);
 
-        pB_statystyki = new QPushButton(centralWidget);
-        pB_statystyki->setObjectName(QStringLiteral("pB_statystyki"));
-        pB_statystyki->setGeometry(QRect(40, 290, 93, 28));
+        pb_pokaz = new QPushButton(layoutWidget1);
+        pb_pokaz->setObjectName(QStringLiteral("pb_pokaz"));
+
+        horizontalLayout_2->addWidget(pb_pokaz);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -381,10 +379,9 @@ public:
         sB_wiatr->setSpecialValueText(QString());
         sB_wiatr->setSuffix(QApplication::translate("MainWindow", "m/s", 0));
         cB_atmosfera->setText(QApplication::translate("MainWindow", "Uwzgl\304\231dnij atmosfer\304\231", 0));
-        pb_pokaz->setText(QApplication::translate("MainWindow", "Poka\305\274", 0));
-        pB_start->setText(QApplication::translate("MainWindow", "OBLICZ", 0));
-        pB_zapisz->setText(QApplication::translate("MainWindow", "Zapisz", 0));
         pB_statystyki->setText(QApplication::translate("MainWindow", "Analiza", 0));
+        pB_zapisz->setText(QApplication::translate("MainWindow", "Zapisz", 0));
+        pb_pokaz->setText(QApplication::translate("MainWindow", "Rysuj", 0));
         menuMenu->setTitle(QApplication::translate("MainWindow", "Menu", 0));
         menuPomoc->setTitle(QApplication::translate("MainWindow", "Pomoc", 0));
     } // retranslateUi

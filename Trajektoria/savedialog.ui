@@ -94,6 +94,9 @@
         <property name="text">
          <string>nazwa_pliku</string>
         </property>
+        <property name="maxLength">
+         <number>100</number>
+        </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>

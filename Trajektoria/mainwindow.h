@@ -47,7 +47,6 @@ signals:
 
     
 private slots:
-    void on_pB_start_clicked();
 
     void on_hS_predkosc_valueChanged(int value);
 
