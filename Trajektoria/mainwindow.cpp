@@ -47,6 +47,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     traj_obraz = new pokazTraj(this);
     staty = new statystyki(this);
+    ustaw = new ustawienia(this);
 }
 
 MainWindow::~MainWindow()
@@ -159,7 +160,7 @@ void MainWindow::on_pb_pokaz_clicked()
 void MainWindow::on_actionInstrukcja_triggered()
 {
     QLabel *imageLabel = new QLabel;
-    QImage image("Instrukcja_beta.png");
+    QImage image("Instrukcja.png");
     imageLabel->setPixmap(QPixmap::fromImage(image));
 
     instrukcja = new QScrollArea;
@@ -196,4 +197,28 @@ void MainWindow::on_pB_statystyki_clicked()
     Trajektoria(W,S,O,atmosfera,g);
     emit(przeslij_liste(g));
     staty->show();
+}
+
+void MainWindow::on_m_Ustawienia_triggered()
+{
+    if(ustaw->isVisible())
+        ustaw->close();
+
+    connect(ustaw,SIGNAL(zmien_graw(double)),this,SLOT(aktualizuj_graw(double)));
+    connect(ustaw,SIGNAL(zmien_cisnienie(double)),this,SLOT(aktualizuj_cisnienie(double)));
+
+    ustaw->show();
+
+}
+
+void MainWindow::aktualizuj_graw(double g)
+{
+    S[0]=g;
+    aktualizuj_traj();
+}
+
+void MainWindow::aktualizuj_cisnienie(double p)
+{
+    S[1]=Ro*p;
+    aktualizuj_traj();
 }

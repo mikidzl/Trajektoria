@@ -62,6 +62,8 @@ bool wczytaj_baze(string nazwa, double Ob[][3])
 
 bool zapisz(string nazwa, Punkt *w)
 {
+    nazwa= ".\\Trajektorie\\"+nazwa;
+
     ofstream plik(nazwa.c_str());
 
     if(!plik.is_open()) return false;

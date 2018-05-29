@@ -12,9 +12,11 @@ INPUT(
 ./debug\obraz.o
 ./debug\pokaz_traj.o
 ./debug\statystyki.o
+./debug\ustawienia.o
 ./debug\moc_mainwindow.o
 ./debug\moc_savedialog.o
 ./debug\moc_autor.o
 ./debug\moc_pokaz_traj.o
 ./debug\moc_statystyki.o
+./debug\moc_ustawienia.o
 );

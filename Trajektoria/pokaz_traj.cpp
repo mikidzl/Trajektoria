@@ -28,5 +28,5 @@ void pokazTraj::zrob_trajektorie(Punkt *p)
 void pokazTraj::on_pB_zapisz_clicked()
 {
     nazwa = ui->line_nazwa->text();
-    obraz.save(nazwa+".bmp","BMP",-1);
+    obraz.save(".\\Wykresy\\"+nazwa +".bmp","BMP",-1);
 }

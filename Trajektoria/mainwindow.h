@@ -9,6 +9,7 @@
 #include "autor.h"
 #include "pokaz_traj.h"
 #include "statystyki.h"
+#include "ustawienia.h"
 
 #include "punkt.h"
 #include "trajektoria.h"
@@ -74,6 +75,12 @@ private slots:
 
     void on_pB_statystyki_clicked();
 
+    void on_m_Ustawienia_triggered();
+
+    void aktualizuj_graw(double g);
+
+    void aktualizuj_cisnienie(double p);
+
 private:
     Ui::MainWindow *ui;
     Punkt *g;
@@ -82,6 +89,7 @@ private:
     pokazTraj *traj_obraz;
     QScrollArea *instrukcja;
     statystyki *staty;
+    ustawienia *ustaw;
 
 
 };

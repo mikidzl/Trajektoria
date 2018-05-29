@@ -35,10 +35,8 @@ class Ui_MainWindow
 {
 public:
     QAction *actionInstrukcja;
-    QAction *actionO_programie;
     QAction *actionAutor;
-    QAction *actionCos;
-    QAction *actionTam;
+    QAction *m_Ustawienia;
     QWidget *centralWidget;
     QComboBox *cB_obiekt;
     QWidget *layoutWidget;
@@ -98,14 +96,10 @@ public:
         MainWindow->setIconSize(QSize(60, 60));
         actionInstrukcja = new QAction(MainWindow);
         actionInstrukcja->setObjectName(QStringLiteral("actionInstrukcja"));
-        actionO_programie = new QAction(MainWindow);
-        actionO_programie->setObjectName(QStringLiteral("actionO_programie"));
         actionAutor = new QAction(MainWindow);
         actionAutor->setObjectName(QStringLiteral("actionAutor"));
-        actionCos = new QAction(MainWindow);
-        actionCos->setObjectName(QStringLiteral("actionCos"));
-        actionTam = new QAction(MainWindow);
-        actionTam->setObjectName(QStringLiteral("actionTam"));
+        m_Ustawienia = new QAction(MainWindow);
+        m_Ustawienia->setObjectName(QStringLiteral("m_Ustawienia"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setEnabled(true);
@@ -329,10 +323,8 @@ public:
 
         menuBar->addAction(menuMenu->menuAction());
         menuBar->addAction(menuPomoc->menuAction());
-        menuMenu->addAction(actionCos);
-        menuMenu->addAction(actionTam);
+        menuMenu->addAction(m_Ustawienia);
         menuPomoc->addAction(actionInstrukcja);
-        menuPomoc->addAction(actionO_programie);
         menuPomoc->addAction(actionAutor);
 
         retranslateUi(MainWindow);
@@ -355,10 +347,8 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Trajektoria balistyczna", 0));
         actionInstrukcja->setText(QApplication::translate("MainWindow", "Instrukcja", 0));
-        actionO_programie->setText(QApplication::translate("MainWindow", "O programie", 0));
         actionAutor->setText(QApplication::translate("MainWindow", "O autorze", 0));
-        actionCos->setText(QApplication::translate("MainWindow", "cos", 0));
-        actionTam->setText(QApplication::translate("MainWindow", "tam", 0));
+        m_Ustawienia->setText(QApplication::translate("MainWindow", "Ustawienia", 0));
         cB_obiekt->clear();
         cB_obiekt->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Pocisk 9mm", 0)

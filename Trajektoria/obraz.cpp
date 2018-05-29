@@ -13,7 +13,7 @@ QPixmap tworzObraz(Punkt *p, int size_x, int size_y)
 
     rysujSiatka(obraz,p,size_x,size_y,a);
 
-    //trawka(obraz,a,size_x,size_y);
+    trawka(obraz,a,size_x,size_y);
     slonko(obraz);
 
 
@@ -162,7 +162,8 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
             k=500;
         if(minX+maxX >= 3200 || maxY >= 3200)
             k=1000;
-
+        if(minX+maxX >= 6400 || maxY >= 6400)
+            k=2000;
         if(proporcje(maxX+minX,maxY,size_x,size_y))
         {
             skala=(size_x-2*a)/(maxX+minX);
@@ -352,6 +353,8 @@ void rysujSiatka(QImage &obraz,Punkt *p, int size_x, int size_y, int a)
         k=500;
     if(minX+maxX >= 3200 || maxY >= 3200)
         k=1000;
+    if(minX+maxX >= 6400 || maxY >= 6400)
+        k=2000;
 
 
     if(proporcje(maxX+minX,maxY,size_x,size_y))

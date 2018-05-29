@@ -12,9 +12,11 @@ INPUT(
 ./release\obraz.o
 ./release\pokaz_traj.o
 ./release\statystyki.o
+./release\ustawienia.o
 ./release\moc_mainwindow.o
 ./release\moc_savedialog.o
 ./release\moc_autor.o
 ./release\moc_pokaz_traj.o
 ./release\moc_statystyki.o
+./release\moc_ustawienia.o
 );

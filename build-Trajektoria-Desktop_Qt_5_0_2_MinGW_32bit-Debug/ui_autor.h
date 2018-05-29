@@ -134,7 +134,7 @@ public:
 
     void retranslateUi(QDialog *autor)
     {
-        autor->setWindowTitle(QApplication::translate("autor", "Dialog", 0));
+        autor->setWindowTitle(QApplication::translate("autor", "Autor", 0));
         label_5->setText(QString());
         label->setText(QApplication::translate("autor", "Miko\305\202aj Urba\305\204ski", 0));
         label_4->setText(QApplication::translate("autor", "urbanm6@gmail.com", 0));

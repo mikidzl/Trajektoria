@@ -560,8 +560,7 @@
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionCos"/>
-    <addaction name="actionTam"/>
+    <addaction name="m_Ustawienia"/>
    </widget>
    <widget class="QMenu" name="menuPomoc">
     <property name="autoFillBackground">
@@ -571,7 +570,6 @@
      <string>Pomoc</string>
     </property>
     <addaction name="actionInstrukcja"/>
-    <addaction name="actionO_programie"/>
     <addaction name="actionAutor"/>
    </widget>
    <addaction name="menuMenu"/>
@@ -596,24 +594,14 @@
     <string>Instrukcja</string>
    </property>
   </action>
-  <action name="actionO_programie">
-   <property name="text">
-    <string>O programie</string>
-   </property>
-  </action>
   <action name="actionAutor">
    <property name="text">
     <string>O autorze</string>
    </property>
   </action>
-  <action name="actionCos">
+  <action name="m_Ustawienia">
    <property name="text">
-    <string>cos</string>
-   </property>
-  </action>
-  <action name="actionTam">
-   <property name="text">
-    <string>tam</string>
+    <string>Ustawienia</string>
    </property>
   </action>
  </widget>
