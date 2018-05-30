@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ustawienia
 {
 public:
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
@@ -34,6 +34,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QDoubleSpinBox *sB_cisnienie;
+    QLabel *label_3;
 
     void setupUi(QDialog *ustawienia)
     {
@@ -45,20 +46,20 @@ public:
         QIcon icon;
         icon.addFile(QStringLiteral("ikona.png"), QSize(), QIcon::Normal, QIcon::Off);
         ustawienia->setWindowIcon(icon);
-        widget = new QWidget(ustawienia);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(80, 60, 159, 61));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(ustawienia);
+        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
+        layoutWidget->setGeometry(QRect(60, 40, 159, 61));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout->addWidget(label);
 
-        grawitacja = new QDoubleSpinBox(widget);
+        grawitacja = new QDoubleSpinBox(layoutWidget);
         grawitacja->setObjectName(QStringLiteral("grawitacja"));
         grawitacja->setMinimumSize(QSize(82, 0));
         grawitacja->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
@@ -74,12 +75,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_2->addWidget(label_2);
 
-        sB_cisnienie = new QDoubleSpinBox(widget);
+        sB_cisnienie = new QDoubleSpinBox(layoutWidget);
         sB_cisnienie->setObjectName(QStringLiteral("sB_cisnienie"));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::MinimumExpanding);
         sizePolicy.setHorizontalStretch(0);
@@ -99,6 +100,11 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        label_3 = new QLabel(ustawienia);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(40, 110, 231, 71));
+        label_3->setFrameShape(QFrame::NoFrame);
+        label_3->setWordWrap(true);
 
         retranslateUi(ustawienia);
 
@@ -113,6 +119,7 @@ public:
         grawitacja->setSuffix(QApplication::translate("ustawienia", "m/s\302\262", 0));
         label_2->setText(QApplication::translate("ustawienia", "Ci\305\233nienie:", 0));
         sB_cisnienie->setSuffix(QApplication::translate("ustawienia", "atm", 0));
+        label_3->setText(QApplication::translate("ustawienia", "*Uwaga znaczne zmienianie tych sta\305\202ych nie jest wskazane, gdy\305\274 osie wykresu mog\304\205 by\304\207 niepoprawnie wy\305\233wietlane dla skrajnych warto\305\233ci. ", 0));
     } // retranslateUi
 
 };

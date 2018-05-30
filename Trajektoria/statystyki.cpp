@@ -88,7 +88,35 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
     double kV=1;
 
     if(t<2)
-        kT=0.2;
+        kT=0.5;
+    if(t<1)
+        kT=0.25;
+    if(t>8)
+        kT=2;
+    if(t>16)
+        kT=4;
+    if(t>32)
+        kT=8;
+    if(t>64)
+        kT=16;
+    if(t>128)
+        kT=32;
+    if(t>256)
+        kT=64;
+
+
+
+
+    if(maxV>10)
+        kV=2;
+    if(maxV>20)
+        kV=4;
+    if(maxV>40)
+        kV=8;
+    if(maxV>80)
+        kV=16;
+    if(maxV>160)
+        kV=32;
 
     int i=0;
 
@@ -158,7 +186,11 @@ QPixmap statystyki::rysuj_wykres(Punkt *p, int size_x, int size_y)
         {
             j = (size_y-a-i)/skalaV;
             QString s= QString::number(j);
+            if(j>99)
+              osY.drawText(a-21,i+5,s);
+            else{
             osY.drawText(a-15,i+5,s);
+            }
         }
     }
     osY.setRenderHint(QPainter::Antialiasing);

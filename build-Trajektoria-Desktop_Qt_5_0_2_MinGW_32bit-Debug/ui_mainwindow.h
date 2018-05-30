@@ -301,7 +301,7 @@ public:
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setEnabled(true);
         menuBar->setGeometry(QRect(0, 0, 570, 26));
-        menuBar->setAutoFillBackground(false);
+        menuBar->setAutoFillBackground(true);
         menuBar->setStyleSheet(QStringLiteral(""));
         menuBar->setDefaultUp(false);
         menuMenu = new QMenu(menuBar);

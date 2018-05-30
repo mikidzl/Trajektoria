@@ -6,7 +6,7 @@ QPixmap tworzObraz(Punkt *p, int size_x, int size_y)
 
     QRgb kolor_tla = qRgb(255,255,255);
 
-    int a=25;           //odległość od krawędzi obrazu
+    int a=30;           //odległość od krawędzi obrazu
 
 
     obraz.fill(kolor_tla);
@@ -192,7 +192,7 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
         {
             double j;
             osX.drawLine(i,size_y-a+c,i,size_y-a-c);
-            if(size_x-50> i)
+            if(size_x-55> i)
             {
                 j = ((i-x0)/skala);
                 if(fabs(j) < 0.1)
@@ -228,12 +228,12 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
             {
                 j = (size_y-a-i)/skala;
                 QString s= QString::number(j);
-                if(j>=9.9 && j<100)
+                if(j>9.9 && j<100)
                     osY.drawText(x0-16,i-2,s);
-                else if(j>=99.9 && j<1000)
+                else if(j>99 && j<1000)
                     osY.drawText(x0-21,i-2,s);
-                else if(j>999.9)
-                    osY.drawText(x0-26,i-2,s);
+                else if(j>999)
+                    osY.drawText(x0-28,i-2,s);
                 else
                 {
                     osY.drawText(x0-10,i-2,s);
@@ -299,9 +299,9 @@ void rysujOsie(QImage &obraz, Punkt *p, int size_x, int size_y, int a)
             {
                 j = (size_y-a-i)/skala;
                 QString s= QString::number(j);
-                if(j>=9 && j<100)
+                if(j>9 && j<100)
                     osY.drawText(x0-16,i-2,s);
-                else if(j>=95 && j<1000)
+                else if(j>99 && j<1000)
                     osY.drawText(x0-21,i-2,s);
                 else if(j>999)
                     osY.drawText(x0-26,i-2,s);

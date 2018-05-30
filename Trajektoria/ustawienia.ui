@@ -29,11 +29,11 @@
    <iconset>
     <normaloff>ikona.png</normaloff>ikona.png</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>60</y>
+     <x>60</x>
+     <y>40</y>
      <width>159</width>
      <height>61</height>
     </rect>
@@ -130,6 +130,25 @@
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>110</y>
+     <width>231</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::NoFrame</enum>
+   </property>
+   <property name="text">
+    <string>*Uwaga znaczne zmienianie tych stałych nie jest wskazane, gdyż osie wykresu mogą być niepoprawnie wyświetlane dla skrajnych wartości. </string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
   </widget>
  </widget>
  <resources/>
